@@ -1,4 +1,4 @@
-function UserTable({ users }) {
+function UserTable({ users, editUser }) {
   return (
     <table border="1">
       <thead>
@@ -7,6 +7,7 @@ function UserTable({ users }) {
           <th>Age</th>
           <th>Email</th>
           <th>Password</th>
+          <th>Action</th>
         </tr>
       </thead>
 
@@ -17,6 +18,11 @@ function UserTable({ users }) {
             <td>{user.age}</td>
             <td>{user.email}</td>
             <td>{user.password}</td>
+            <td>
+              <button type="button" onClick={() => editUser(index)}>
+                Edit
+              </button>
+            </td>
           </tr>
         ))}
       </tbody>
